@@ -6,6 +6,7 @@
 # Note that the street is extremely long - position <= 10^18.
 
 # Solution
+# Time O(n*logn) and space O(n+1) where n is the number of lights
 # We create an array of lights changes. Each element is a change at a given position. So, change[pos[i]-radius] = 1 and change[pos[i]+radius+1] = -1, meaning that when the light starts the change is 1, when it ends the change is -1. Then we sort this array and check prefix sums for the maximum lighted area and return its position.
 
 def find_brightest_position(lights: list[list[int]]) -> int:
