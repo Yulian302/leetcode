@@ -13,7 +13,7 @@ from collections import deque
 from cmath import inf
 
 
-def largestValues(self, root):
+def largestValues(root):
     if not root:
         return []
     ans = []
