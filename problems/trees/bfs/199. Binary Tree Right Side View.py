@@ -9,9 +9,12 @@
 # Time O(n) and space O(n) as we still move across all nodes, not just levels
 # We use bfs to move across the levels of our tree and add the last node in a queue to our answer array. This approach gives us the right side view of a tree.
 from collections import deque
+from typing import Optional
+
+from problems.trees.bfs.BinaryTree import TreeNode
 
 
-def rightSideView(root):
+def rightSideView(root: Optional[TreeNode]):
     if not root:
         return []
     ans = []

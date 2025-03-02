@@ -11,9 +11,12 @@
 
 from collections import deque
 from cmath import inf
+from typing import Optional
+
+from problems.trees.bfs.BinaryTree import TreeNode
 
 
-def largestValues(root):
+def largestValues(root: Optional[TreeNode]):
     if not root:
         return []
     ans = []
