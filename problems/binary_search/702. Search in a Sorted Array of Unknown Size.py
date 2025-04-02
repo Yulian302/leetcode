@@ -30,7 +30,7 @@
 
 
 class Solution:
-    def search(self, reader: "ArrayReader", target: int) -> int:
+    def search(self, reader: "ArrayReader", target: int) -> int:  # type: ignore
         OUT_OF_BOUNDS = 2**31 - 1
         left = 0
         right = target - reader.get(0)
