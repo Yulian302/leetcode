@@ -24,7 +24,7 @@ class Node:
 from typing import List
 
 
-def preorder(self, root: "Node") -> List[int]:
+def preorder(root: "Node") -> List[int]:  # type: ignore
     if root is None:
         return []
 
@@ -41,7 +41,7 @@ def preorder(self, root: "Node") -> List[int]:
 
 # recursive
 
-def preorder(self, root: 'Node') -> List[int]:
+def preorder(root: 'Node') -> List[int]:  # type: ignore
     res = []
 
     def helper(node):
