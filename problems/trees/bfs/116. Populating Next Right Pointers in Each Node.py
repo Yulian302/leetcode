@@ -41,3 +41,32 @@ def connect(root):
             if node.right:
                 q.append(node.right)
     return root
+
+
+# --- or ---
+
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val: int = 0, left: 'Node' = None, right: 'Node' = None, next: 'Node' = None):
+        self.val = val
+        self.left = left
+        self.right = right
+        self.next = next
+"""
+
+
+def connect(root):
+    if not root:
+        return
+
+    if root.left and root.right:
+        root.left.next = root.right
+
+    if root.next and root.right:
+        root.right.next = root.next.left
+
+    connect(root.left)
+    connect(root.right)
+
+    return root
