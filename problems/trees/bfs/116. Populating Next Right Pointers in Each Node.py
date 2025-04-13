@@ -44,7 +44,8 @@ def connect(root):
 
 
 # --- or ---
-
+# Time O(N) and space O(1) for a recursive solution (if not counting a call stack).
+# We use DFS. For a node that has children (left and right), create a pointer next from left to right child. For a node that has a pointer to the next pointer and has a right child, create a next pointer from its right child to next's left child.
 """
 # Definition for a Node.
 class Node:
