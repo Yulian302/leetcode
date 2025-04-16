@@ -47,6 +47,7 @@ def findCheapestPrice(n: int, flights, src: int, dst: int, k: int
 
 # --- or ---
 # Bellman-Ford algorithm
+# Time O(K*(V+E)), where K is the number of edges allowed and E is the total number of edges; and space O(V)
 # Two arrays are used to keep track of prev distances and current distances. Edge relaxation is used to update with more optimal routes. This algorithm is good for finding shortest distance (or cheapest path) from source to destination with at most K edges.
 
 class Solution:
