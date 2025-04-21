@@ -17,3 +17,22 @@ class Solution:
         for i in range(n - k + 1):
             codes.add(s[i: i + k])
         return len(codes) == 2**k
+
+
+# This approach is more efficient in time, but consumes more memory.
+# Time O(N) and space O(2^K)
+# It leverages efficient hashing technique that takes O(1) time to process each binary code.
+
+def hasAllCodesRollingHash(s, k):
+    need = 1 << k
+    got = [False]*need
+    all_one = need - 1
+    hash_val = 0
+    for i in range(len(s)):
+        hash_val = ((hash_val << 1) & all_one | int(s[i]))
+        if i >= k-1 and got[hash_val] is False:
+            got[hash_val] = True
+            need -= 1
+            if need == 0:
+                return True
+    return False
